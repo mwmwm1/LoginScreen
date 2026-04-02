@@ -46,20 +46,23 @@
             // 
             // txtID
             // 
-            txtID.ForeColor = SystemColors.WindowText;
+            txtID.ForeColor = Color.Silver;
             txtID.Location = new Point(39, 86);
             txtID.Name = "txtID";
             txtID.Size = new Size(213, 23);
             txtID.TabIndex = 2;
+            txtID.Text = "아이디";
             txtID.Enter += txtID_Enter;
             txtID.Leave += txtID_Leave;
             // 
             // txtPW
             // 
+            txtPW.ForeColor = Color.Silver;
             txtPW.Location = new Point(39, 115);
             txtPW.Name = "txtPW";
             txtPW.Size = new Size(213, 23);
             txtPW.TabIndex = 3;
+            txtPW.Text = "패스워드";
             txtPW.TextChanged += txtPW_TextChanged;
             txtPW.Enter += txtPW_Enter;
             txtPW.Leave += txtPW_Leave;
@@ -74,12 +77,13 @@
             btnLogin.TabIndex = 1;
             btnLogin.Text = "로그인";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(284, 311);
+            ClientSize = new Size(284, 230);
             Controls.Add(btnLogin);
             Controls.Add(txtPW);
             Controls.Add(txtID);
