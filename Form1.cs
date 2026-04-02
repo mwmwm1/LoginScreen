@@ -66,18 +66,56 @@ namespace LoginScreen
             string inputPW = (txtPW.Text == "패스워드") ? "" : txtPW.Text;
 
             //임시 비밀번호
-            string correctID = "loginscreen";
+            string correctID = "log";
             string correctPW = "1234";
 
             //로그인 성공 및 실패시 메시지 박스 출력
             if (inputID == correctID && inputPW == correctPW)
             {
-                MessageBox.Show("로그인 되었습니다.");
+                MessageBox.Show("로그인 성공");
+
+                lblErrorMsg.Visible = false;
             }
             else
             {
-                MessageBox.Show("로그인 실패");
+                //MessageBox.Show("로그인 실패", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblErrorMsg.Visible = true;
             }
+        }
+
+        private void lblErrorMsg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // 기본비프음방지txtPW.Focus(); // 패스워드입력창이포커스를갖게끔}
+                txtPW.Focus();
+            }
+        }
+
+        private void txtPW_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // 기본비프음방지btnLogin.PerformClick(); // 버튼이눌린것처럼만들기}
+                btnLogin_Click(sender, e);
+            }
+        }
+
+       
+
+        private void Form1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
